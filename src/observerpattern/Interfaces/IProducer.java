@@ -2,7 +2,7 @@ package observerpattern.Interfaces;
 
 import java.util.List;
 
-public interface Producer {
+public interface IProducer {
     void registerObserver(Consumer observer);
 
     void unregisterObserver(Consumer observer);

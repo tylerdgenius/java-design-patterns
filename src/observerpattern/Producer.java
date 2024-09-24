@@ -3,9 +3,9 @@ package observerpattern;
 import java.util.ArrayList;
 import java.util.List;
 import observerpattern.Interfaces.Consumer;
-import observerpattern.Interfaces.Producer;
+import observerpattern.Interfaces.IProducer;
 
-public class Main implements Producer {
+public class Producer implements IProducer {
     public List<Consumer> observers = new ArrayList<>();
 
     @Override
