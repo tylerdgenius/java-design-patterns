@@ -9,6 +9,10 @@
 // import singletonpattern.Base;
 // import singletonpattern.Interfaces.IBase;
 
+import strategypattern.*;
+import strategypattern.Interfaces.IShoppingCart;
+import strategypattern.Models.*;
+
 public class App {
     public static void main(String[] args) {
 
@@ -43,5 +47,15 @@ public class App {
         // Movie movie = new Movie();
 
         // movie.watchMovie();
+
+        IShoppingCart paypalCart = new ShoppingCart(
+                new PaypalPayment("user@email.com"));
+        IShoppingCart creditCardPayment = new ShoppingCart(new CreditCardPayment(234));
+
+        IShoppingCart cashCart = new ShoppingCart(new CashPayment());
+
+        cashCart.checkout(200);
+        paypalCart.checkout(500);
+        creditCardPayment.checkout(400);
     }
 }
